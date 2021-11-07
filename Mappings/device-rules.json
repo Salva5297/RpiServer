@@ -1,0 +1,148 @@
+{
+    "resource_rules": [
+        {
+            "id": "Device",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Device",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/hasModel",
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_VOC_and_eCO2_Gas_Sensor(SGP30)",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/hasModel",
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_Light_Sensor_1*2",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/hasModel",
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_Temperature&Humidity_Sensor_Pro(DHT22)",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/hasModel",
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_Loudness_Sensor",
+                    "is_literal" : "False"
+                }
+            ]
+        },
+        {
+            "id": "Sensor Particles",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_VOC_and_eCO2_Gas_Sensor(SGP30)",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Sensor",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/hasModel",
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_VOC_and_eCO2_Gas_Sensor(SGP30)/CO2eq",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/hasModel",
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_VOC_and_eCO2_Gas_Sensor(SGP30)/TVOC",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locatedInPort",
+                    "object" : "Bus Port",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                }
+            ]
+        },
+        {
+            "id": "Sensor Luminity",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_Light_Sensor_1*2",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Sensor",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/hasModel",
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_Light_Sensor_1*2/LuminousIntensity",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/hasModel",
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_Light_Sensor_1*2/LuminousResistance",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locatedInPort",
+                    "object" : "1",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "id": "Sensor TH",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_Temperature&Humidity_Sensor_Pro(DHT22)",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Sensor",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/hasModel",
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_Temperature&Humidity_Sensor_Pro(DHT22)/Temperature",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/hasModel",
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_Temperature&Humidity_Sensor_Pro(DHT22)/RelativeHumidity",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locatedInPort",
+                    "object" : "4",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "id": "Sensor Sound",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_RPI1/Grove_-_Loudness_Sensor",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Sensor",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locatedInPort",
+                    "object" : "0",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        }
+    ]
+}

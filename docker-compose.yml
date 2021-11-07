@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+
+  kgg:
+    build: ./
+    command: python3 manager.py
+    volumes:
+      - ./:/usr/src/app/
+    ports:
+      - 3307:3306
+
+networks:
+  default:
+    external: true
+    name: sql_db_custom-network

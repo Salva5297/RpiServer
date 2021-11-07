@@ -1,0 +1,372 @@
+{
+    "resource_rules": [
+        {
+            "id": "CPU_Usage Measurement",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/CPUUsage/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_{$.Time.date}_{$.Time.time}",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#HWProperty",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/relatesToProperty",
+                    "object" : "https://bimerr.iot.linkeddata.es/def/weather#CPUUsage",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/measurementMadeBy", 
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasValue", 
+                    "object" : "{$.HW.CPU_Usage}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasTimeStamp", 
+                    "object" : "{$.Time.timeStamp}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locationOfMeasurement",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Internal",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/isMeasuredIn",
+                    "object": "http://www.ontology-of-units-of-measure.org/resource/om-2/percentage",
+                    "is_literal": "False"
+                }
+            ]
+        },
+        {
+            "id": "CPU_Temp Measurement",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/CPUTemp/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_{$.Time.date}_{$.Time.time}",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#HWProperty",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/relatesToProperty",
+                    "object" : "https://bimerr.iot.linkeddata.es/def/weather#CPUTemp",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/measurementMadeBy", 
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasValue", 
+                    "object" : "{$.HW.CPU_Temp}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasTimeStamp", 
+                    "object" : "{$.Time.timeStamp}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locationOfMeasurement",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Internal",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/isMeasuredIn",
+                    "object": "http://www.ontology-of-units-of-measure.org/resource/om-2/degreeCelsius",
+                    "is_literal": "False"
+                }
+            ]
+        },
+        {
+            "id": "RAM_Total Measurement",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/RAMTotal/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_{$.Time.date}_{$.Time.time}",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#HWProperty",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/relatesToProperty",
+                    "object" : "https://bimerr.iot.linkeddata.es/def/weather#RAMTotal",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/measurementMadeBy", 
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasValue", 
+                    "object" : "{$.HW.RAM_Total}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasTimeStamp", 
+                    "object" : "{$.Time.timeStamp}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locationOfMeasurement",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Internal",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/isMeasuredIn",
+                    "object": "http://www.ontology-of-units-of-measure.org/resource/om-2/megabyte",
+                    "is_literal": "False"
+                }
+            ]
+        },
+        {
+            "id": "RAM_Usage Measurement",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/RAMUsage/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_{$.Time.date}_{$.Time.time}",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#HWProperty",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/relatesToProperty",
+                    "object" : "https://bimerr.iot.linkeddata.es/def/weather#RAMUsage",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/measurementMadeBy", 
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasValue", 
+                    "object" : "{$.HW.RAM_Usage}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasTimeStamp", 
+                    "object" : "{$.Time.timeStamp}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locationOfMeasurement",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Internal",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/isMeasuredIn",
+                    "object": "http://www.ontology-of-units-of-measure.org/resource/om-2/megabyte",
+                    "is_literal": "False"
+                }
+            ]
+        },
+        {
+            "id": "RAM_Free Measurement",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/RAMFree/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_{$.Time.date}_{$.Time.time}",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#HWProperty",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/relatesToProperty",
+                    "object" : "https://bimerr.iot.linkeddata.es/def/weather#RAMFree",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/measurementMadeBy", 
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasValue", 
+                    "object" : "{$.HW.RAM_Free}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasTimeStamp", 
+                    "object" : "{$.Time.timeStamp}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locationOfMeasurement",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Internal",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/isMeasuredIn",
+                    "object": "http://www.ontology-of-units-of-measure.org/resource/om-2/megabyte",
+                    "is_literal": "False"
+                }
+            ]
+        },
+        {
+            "id": "DISK_Total Measurement",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/DISKTotal/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_{$.Time.date}_{$.Time.time}",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#HWProperty",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/relatesToProperty",
+                    "object" : "https://bimerr.iot.linkeddata.es/def/weather#DISKTotal",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/measurementMadeBy", 
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasValue", 
+                    "object" : "{$.HW.DISK_Total}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasTimeStamp", 
+                    "object" : "{$.Time.timeStamp}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locationOfMeasurement",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Internal",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/isMeasuredIn",
+                    "object": "http://www.ontology-of-units-of-measure.org/resource/om-2/gigabyte",
+                    "is_literal": "False"
+                }
+            ]
+        },
+        {
+            "id": "DISK_Free Measurement",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/DISKFree/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_{$.Time.date}_{$.Time.time}",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#HWProperty",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/relatesToProperty",
+                    "object" : "https://bimerr.iot.linkeddata.es/def/weather#DISKFree",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/measurementMadeBy", 
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasValue", 
+                    "object" : "{$.HW.DISK_Free}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasTimeStamp", 
+                    "object" : "{$.Time.timeStamp}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locationOfMeasurement",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Internal",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/isMeasuredIn",
+                    "object": "http://www.ontology-of-units-of-measure.org/resource/om-2/gigabyte",
+                    "is_literal": "False"
+                }
+            ]
+        },
+        {
+            "id": "DISK_Usage Measurement",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/DISKUsage/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_{$.Time.date}_{$.Time.time}",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#HWProperty",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/relatesToProperty",
+                    "object" : "https://bimerr.iot.linkeddata.es/def/weather#DISKUsage",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/measurementMadeBy", 
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasValue", 
+                    "object" : "{$.HW.DISK_Usage}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasTimeStamp", 
+                    "object" : "{$.Time.timeStamp}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locationOfMeasurement",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Internal",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/isMeasuredIn",
+                    "object": "http://www.ontology-of-units-of-measure.org/resource/om-2/percentage",
+                    "is_literal": "False"
+                }
+            ]
+        }
+    ]
+}

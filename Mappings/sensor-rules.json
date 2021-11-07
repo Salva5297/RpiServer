@@ -1,0 +1,55 @@
+{
+    "resource_rules": [
+        {
+            "id": "Sensors Measurement",
+            "datasource_ids": [
+                "Sensors Datasource"
+            ],
+            "subject": "http://sensorize.linkeddata.es/resource/[REGEXP_REPLACE({$.measure_property}, '\\([^\\)]+\\)', '')]/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_{$.Time.date}_{$.Time.time}",
+            "properties": [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#WeatherProperty",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/relatesToProperty",
+                    "object" : "https://bimerr.iot.linkeddata.es/def/weather#[REGEXP_REPLACE({$.measure_property}, '\\([^\\)]+\\)', '')]",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/measurementMadeBy", 
+                    "object" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}_{$.Time.date}_{$.Time.time}_RP1/{$.model}/[REGEXP_REPLACE({$.measure_property}, '\\([^\\)]+\\)', '')]",
+                    "is_literal" : "False"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasValue", 
+                    "object" : "{$.value}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+                },
+                {
+                    "predicate" : "https://saref.etsi.org/core/hasTimeStamp", 
+                    "object" : "{$.Time.timeStamp}",
+                    "is_literal" : "True",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locationOfMeasurement",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#Internal",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#observedInSeason",
+                    "object": "https://bimerr.iot.linkeddata.es/def/weather#{$.Time.season}",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://saref.etsi.org/core/isMeasuredIn",
+                    "object": "{$.unit_of_measure}",
+                    "is_literal": "False"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "resource_rules": [
+        {
+            "id" : "Location",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject" : "http://sensorize.linkeddata.es/resource/Device/{$.Location.region_name}_{$.Location.str_lat}_{$.Location.str_lon}",
+            "properties" : [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "https://w3id.org/saref/Device",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locatedIn",
+                    "object": "http://sensorize.linkeddata.es/resource/city/{$.Location.region_name}",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locatedIn",
+                    "object": "http://sensorize.linkeddata.es/resource/country/{$.Location.country}",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "https://bimerr.iot.linkeddata.es/def/weather#locatedIn",
+                    "object": "http://sensorize.linkeddata.es/resource/district/{$.Location.city}",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate": "http://www.w3.org/2003/01/geo/wgs84_pos#location",
+                    "object": "http://sensorize.linkeddata.es/resource/Point/{$.Location.region_name}",
+                    "is_literal": "False"
+                }
+            ]
+        },
+        {
+            "id" : "Point",
+            "datasource_ids": [
+                "All Datasource"
+            ],
+            "subject" : "http://sensorize.linkeddata.es/resource/Point/{$.Location.region_name}",
+            "properties" : [
+                {
+                    "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                    "object": "http://www.w3.org/2003/01/geo/wgs84_pos#Point",
+                    "is_literal": "False"
+                },
+                {
+                    "predicate" : "http://www.w3.org/2003/01/geo/wgs84_pos#lat", 
+                    "object" : "{$.Location.lat}",
+                    "is_literal" : "True",
+                    "datatype" : "http://www.w3.org/2001/XMLSchema#decimal"
+                },
+                {
+                    "predicate" : "http://www.w3.org/2003/01/geo/wgs84_pos#long",
+                    "object" : "{$.Location.lon}",
+                    "is_literal": "True",
+                    "datatype" : "http://www.w3.org/2001/XMLSchema#decimal"
+                }
+            ]
+        }
+    ]
+}

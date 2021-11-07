@@ -1,0 +1,26 @@
+{
+    "datasources": [
+        {
+            "id": "All Datasource",
+            "handler": {
+                "type": "JsonHandler",
+                "iterator": "$"
+            },
+            "provider": {
+                "type": "FileProvider",
+                "file": "../Example/source.json"
+            }
+        },
+        {
+            "id": "Sensors Datasource",
+            "handler": {
+                "type": "JsonHandler",
+                "iterator": "$.Sensors.[*]"
+            },
+            "provider": {
+                "type": "FileProvider",
+                "file": "holiwi"
+            }
+        }
+    ]
+}
