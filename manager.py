@@ -5,7 +5,7 @@ from Helio.timer import timer
 app = Flask(__name__)
 
 
-@app.route('/sql', methods=['POST'])
+@app.route('/', methods=['POST'])
 def post_file():
     if request.method == 'POST':
         uploaded_file = request.files['file'].read()
