@@ -41,7 +41,7 @@ def timer(fileName):
     os.system('java -jar Helio/helio.jar --mappings=../Mappings --config=config.json --write=../RDF/'+ fileName +'.ttl --close --clean')
     
     
-    proc = subprocess.Popen(["curl", "--digest", "--verbose" , "--user", "dba:mysecret", "--url", 'http://localhost:8890/sparql-graph-crud-auth?graph-uri=http://localhost:8890/rpisensor', "-T", "../RDF/"+ fileName +".ttl"], shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    proc = subprocess.Popen(["curl", "--digest", "--verbose" , "--user", "dba:mysecret", "--url", 'http://virtuoso_db:8890/sparql-graph-crud-auth?graph-uri=http://virtuoso_db:8890/rpisensor', "-T", "../RDF/"+ fileName +".ttl"], shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     (out, err) = proc.communicate()
     lastCode = str(err).split('HTTP/1.1 ')[-1].split(" ")[0]
     if lastCode == "200":
