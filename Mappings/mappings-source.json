@@ -8,7 +8,7 @@
             },
             "provider": {
                 "type": "FileProvider",
-                "file": "../Example/source.json"
+                "file": "/tmp/tmps0fd2j45"
             }
         },
         {
@@ -19,7 +19,7 @@
             },
             "provider": {
                 "type": "FileProvider",
-                "file": "holiwi"
+                "file": "/tmp/tmps0fd2j45"
             }
         }
     ]

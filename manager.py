@@ -13,13 +13,13 @@ def post_file():
         try:
             temp.write(uploaded_file)
             temp.seek(0)
-            timer(temp.name)
+            response = timer(temp.name)
 
-            return make_response(jsonify({"response": "Graph created, loaded in triple store and added to sql database."}), 201)
+            return make_response(jsonify({"response": response[0]}), response[1])
         finally:
             temp.close()
 
     return "KGG Service"
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=3306)
+    app.run(debug=True, host="0.0.0.0", port=5000)
