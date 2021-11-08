@@ -1,4 +1,5 @@
-FROM python:3.7.12
+#FROM python:3.7.12
+FROM rappdw/docker-java-python:openjdk1.8.0_171-python3.6.6
 
 WORKDIR /usr/src/app
 
