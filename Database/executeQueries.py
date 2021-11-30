@@ -3,25 +3,10 @@ import csv
 from database import insert_data
 
 
-def executeSPARQLquery(query):
+def executeSPARQLquery():
     """
     Executes a SPARQL query and returns the results processed.
     """
-    sparql = SPARQLWrapper("https://sensorize.linkeddata.es/sparql")
-    sparql.setQuery(query)
-    sparql.setReturnFormat(CSV)
-    results = sparql.query().convert()
-    
-    results = [x.split(",") for x in results.decode("utf-8").split("\n")]
-    
-    newResults = [[result[0].replace('"',''), result[1].split('https://bimerr.iot.linkeddata.es/def/weather#')[1].replace('"',''), result[2].replace('"','')] for result in results[1:] if result[0] != "" and result[1].split('https://bimerr.iot.linkeddata.es/def/weather#')[1].replace('"','') != "DetailedStatus"]
-
-    insert_data(newResults)
-    
-    return newResults
-
-
-if __name__ == '__main__':
     
     query = """ SELECT ?timestamp, ?property, ?o 
                 FROM <http://virtuoso_db:8890/rpisensordata> 
@@ -36,5 +21,15 @@ if __name__ == '__main__':
                 } ORDER BY DESC(?timestamp)
                 LIMIT 100
             """
-    results = executeSPARQLquery(query)
-    #print(results)
+   
+    sparql = SPARQLWrapper("https://sensorize.linkeddata.es/sparql")
+    sparql.setQuery(query)
+    sparql.setReturnFormat(CSV)
+    results = sparql.query().convert()
+    
+    results = [x.split(",") for x in results.decode("utf-8").split("\n")]
+    
+    newResults = [[result[0].replace('"',''), result[1].split('https://bimerr.iot.linkeddata.es/def/weather#')[1].replace('"',''), result[2].replace('"','')] for result in results[1:] if result[0] != "" and result[1].split('https://bimerr.iot.linkeddata.es/def/weather#')[1].replace('"','') != "DetailedStatus"]
+
+    insert_data(newResults)
+

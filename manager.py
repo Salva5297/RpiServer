@@ -1,6 +1,7 @@
 from flask import Flask, json, request, make_response, jsonify
 import tempfile
 from Helio.timer import timer
+from Database.executeQueries import executeSPARQLquery
 
 app = Flask(__name__)
 
@@ -14,7 +15,7 @@ def post_file():
             temp.write(uploaded_file)
             temp.seek(0)
             response = timer(temp.name)
-
+            executeSPARQLquery()
             return make_response(jsonify({"response": response[0]}), response[1])
         finally:
             temp.close()
@@ -22,4 +23,4 @@ def post_file():
     return "KGG Service"
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=3306)
+    app.run(debug=True, host="0.0.0.0", port=5000)
