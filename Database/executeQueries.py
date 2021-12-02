@@ -1,6 +1,6 @@
 from SPARQLWrapper import SPARQLWrapper, CSV
 import csv
-from database import insert_data
+from Database.database import insert_data
 
 
 def executeSPARQLquery():

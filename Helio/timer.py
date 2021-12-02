@@ -49,7 +49,8 @@ def timer(fileName):
     (out, err) = proc.communicate()
     lastCode = str(err).split('HTTP/1.1 ')[-1].split(" ")[0]
     
-    os.remove('RDF/'+ fileName.replace('/tmp/','') +".ttl")
+    if os.path.exists('RDF/'+ fileName.replace('/tmp/','') +'.ttl'):
+        os.remove('RDF/'+ fileName.replace('/tmp/','') +".ttl")
     
     if lastCode == "200":
         return ["All OK", 200]

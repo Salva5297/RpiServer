@@ -7,7 +7,7 @@ def insert_data(data):
     connection = pymysql.connect(
         # specify host name
         
-        host="localhost",
+        host="mysql",
         
         # specify username
         user="root",
